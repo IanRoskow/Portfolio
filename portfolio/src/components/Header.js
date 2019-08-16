@@ -6,13 +6,13 @@ const Header = () => {
             <div className="logo">
                 Logo
             </div>
-            <a className="active item">
+            <a href="/" className="active item">
                 Home
             </a>
-            <a className="item">
+            <a href="/" className="item">
                 Messages
             </a>
-            <a className="item">
+            <a href="/" className="item">
                 Friends
             </a>
             
