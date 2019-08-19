@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectList from './ProjectList';
+import Modal from './Modal';
 
 const projectMap = [
     {
@@ -22,21 +23,46 @@ const projectMap = [
     }
 ]
 
-const Projects = () => {
-    const projects = projectMap.map((project) => {
-        return <ProjectList key={project.title} project={project} />;
-    })
+class Projects extends React.Component {
 
-    return (
-        <div className="projects">
-            <div className="myProjects">
-                <h1>My Projects</h1>
-                <div className='projectContainer'>
-                    {projects}
+    getProjects() {
+        const projects = projectMap.map((project) => {
+            return <ProjectList key={project.title} project={project} />;
+        })
+        return projects;
+    }
+
+
+    render() {
+        return(
+            <div className="projects">
+                <div className="myProjects">
+                    <h1>My Projects</h1>
+                    <div className='projectContainer'>
+                        {this.getProjects()}
+                    </div>
                 </div>
+                <Modal />
             </div>
-        </div>
-    )
+        );
+    }
 }
+
+// const Projects = () => {
+//     const projects = projectMap.map((project) => {
+//         return <ProjectList key={project.title} project={project} />;
+//     })
+
+//     return (
+//         <div className="projects">
+//             <div className="myProjects">
+//                 <h1>My Projects</h1>
+//                 <div className='projectContainer'>
+//                     {projects}
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
 
 export default Projects;
