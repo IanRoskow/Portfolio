@@ -107,11 +107,18 @@ body.noScroll #modal{
     top: 50%;
     margin-top: -225px;
     left: 10%;
+    padding: 20px;
 }
 
 .modal .video{
     width: 50%;
     float:left;
+}
+
+.modal .video img{
+    width: calc(100%);
+    border: 3px solid var(--secondColor);
+    border-radius: 5px;
 }
 
 .modal .content{

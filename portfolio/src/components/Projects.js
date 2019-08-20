@@ -7,29 +7,56 @@ const projectMap = [
         key: '1',
         title: 'My Portfolio',
         description: 'This is my portfolio.',
-        image: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/O3Egg9n/hacker-s-computer-screen_rxjqcfh4e_thumbnail-full01.png'
+        source: "Git Hub",
+        demo: "Demo",
+        video: require('../assets/images/SongList.gif'),
+        image: require('../assets/images/Test.JPG')
     },
     {
         key: '2',
         title: 'Streamy',
         description: 'This is my Streamy App.',
-        image: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/O3Egg9n/hacker-s-computer-screen_rxjqcfh4e_thumbnail-full01.png'
+        source: "Git Hub",
+        demo: "Demo",
+        video: require('../assets/images/SongList.gif'),
+        image: require('../assets/images/Test.JPG')
     },
     {
         key: '3',
         title: 'Pics Collection',
         description: 'This is an image library built with react.',
-        image: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/O3Egg9n/hacker-s-computer-screen_rxjqcfh4e_thumbnail-full01.png'
+        source: "Git Hub",
+        demo: "Demo",
+        video: require('../assets/images/SongList.gif'),
+        image: require('../assets/images/Test.JPG')
     }
 ]
 
 class Projects extends React.Component {
+    state = {
+        title: "",
+        description: "",
+        source: "",
+        demo: "",
+        video: ""
+    }
+
 
     getProjects() {
         const projects = projectMap.map((project) => {
-            return <ProjectList key={project.title} project={project} />;
+            return <ProjectList key={project.title} project={project} callBack={this.updateState} />;
         })
         return projects;
+    }
+
+    updateState= ({title, description, source, demo, video}) => {
+        this.setState({
+            title,
+            description,
+            source,
+            demo,
+            video
+        });
     }
 
 
@@ -42,7 +69,13 @@ class Projects extends React.Component {
                         {this.getProjects()}
                     </div>
                 </div>
-                <Modal />
+                <Modal 
+                    title={this.state.title}
+                    description={this.state.description}
+                    source={this.state.source}
+                    demo={this.state.demo}
+                    video={this.state.video}
+                />
             </div>
         );
     }

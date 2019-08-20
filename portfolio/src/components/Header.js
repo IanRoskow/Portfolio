@@ -7,13 +7,13 @@ const Header = () => {
                 Logo
             </div>
             <a href="/" className="active item">
-                Home
+                About
             </a>
             <a href="/" className="item">
-                Messages
+                Projects
             </a>
             <a href="/" className="item">
-                Friends
+                Contact
             </a>
             
         </div>

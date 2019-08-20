@@ -5,13 +5,15 @@ const Modal = props => {
     return ReactDOM.createPortal(
         <div onClick={() => document.querySelector("body").classList.remove("noScroll")} className='background'>
             <div onClick={(e) => e.stopPropagation()} className="modal">
-                <div className='video'>Project Title</div>
+                <div className='video'>
+                    <img src={props.video} />
+                </div>
                 <div className='content'>
-                    <div className='title'>Project 1</div>
-                    <div className='description'>This is the project description of how I did an awesome job with this project.</div>
-                    <div className='conntainer'>
-                        <button>Demo</button>
-                        <button>Git Hub</button>
+                    <h2 className='title'>{props.title}</h2>
+                    <p className='description'>{props.description}</p>
+                    <div className='container'>
+                        <button >{props.demo}</button>
+                        <button>{props.source}</button>
                     </div>
                 </div>
             </div>
