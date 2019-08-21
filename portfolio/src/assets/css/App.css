@@ -198,9 +198,8 @@ body.noScroll #modal{
 
 
 .about .stack{
-    width:25%;
-    float: left;
     color: var(--secondColor);
+    margin-top: 20px;
 }
 
 .about .stack small{
@@ -233,6 +232,7 @@ body.noScroll #modal{
     min-height: 150px;
     margin: 4.1%;
     float: left;
+    height: 250px;
 }
 
 .projects .projectImage{
@@ -268,8 +268,9 @@ body.noScroll #modal{
     margin: 25px auto 50px;
 }
 
-.iconContainer div{
+.iconContainer a{
     width: 25%;
     float: left;
     color: var(--secondColor);
+    text-decoration: none;
 }

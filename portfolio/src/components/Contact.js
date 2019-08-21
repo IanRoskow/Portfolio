@@ -7,18 +7,18 @@ const Contact = () => {
                 <h1>Contact Me</h1>
                 <h2>ianroskow@gmail.com</h2>
                 <div className='iconContainer'>
-                    <div>
+                    <a href="https://github.com/IanRoskow" target="_blank">
                         Git Hub
-                    </div>
-                    <div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ian-roskow-5b1270a6/" target="_blank">
                         LinkedIn
-                    </div>
-                    <div>
+                    </a>
+                    <a href="https://www.instagram.com/ianroskow/" target="_blank">
                         Instagram
-                    </div>
-                    <div>
+                    </a>
+                    <a href="https://stackoverflow.com/users/8345731/roskow" target="_blank">
                         Stack Overflow
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
