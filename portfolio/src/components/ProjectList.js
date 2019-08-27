@@ -11,9 +11,11 @@ const ProjectList = (props) => {
     return (
         <div className='singleProject'>
             <img className='projectImage' src={props.project.image} alt={props.project.title}/>
-            <div className='projectTitle'>{props.project.title}</div>
-            <small className='projectDescription'>{props.project.description}</small>
-            <button onClick={() => updateModal(props) }>Details</button>
+            <div className="detailContainer">
+                <div className='projectTitle'>{props.project.title}</div>
+                <small className='projectDescription'>{props.project.description}</small>
+                <button onClick={() => updateModal(props) }>Details</button>
+            </div>
         </div>
     );
 }

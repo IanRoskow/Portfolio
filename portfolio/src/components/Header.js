@@ -1,21 +1,45 @@
 import React from 'react';
 
+const scrollPage = (position) => {
+    const desktop = {
+        home: 0,
+        about: 916,
+        projects: 1922,
+        contact: 2247
+    }
+    const mobile = {
+        home: 0,
+        about: 916,
+        projects: 1922,
+        contact: 4077
+    }
+    window.screenY > 740 ? window.scroll({
+        top: desktop[position], 
+        left: 0, 
+        behavior: 'smooth'
+      }): window.scroll({
+        top: mobile[position], 
+        left: 0, 
+        behavior: 'smooth'
+      });
+      
+}
+
 const Header = () => {
     return (
         <div className="menu">
-            <div className="logo">
+            <div onClick={() => scrollPage('home')} className="logo">
                 Logo
             </div>
-            <a href="/" className="active item">
+            <div onClick={() => scrollPage('contact')} className="item">
                 Contact
-            </a>
-            <a href="/" className="item">
+            </div>
+            <div onClick={() => scrollPage('projects')} className="item">
                 Projects
-            </a>
-            <a href="/" className="item">
+            </div>
+            <div onClick={() => scrollPage('about')} className="item">
                 About
-            </a>
-            
+            </div>
         </div>
     )
 }

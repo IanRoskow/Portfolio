@@ -15,6 +15,11 @@
 
 }
 /* Initial classes can be overridden by classes in the following section */
+.app {
+	scroll-behavior: smooth;
+}
+
+
 h1 {
     font-size: var(--headerText);
     font-weight: normal;
@@ -143,13 +148,18 @@ body.noScroll #modal{
     left: 20px;
     top: 15px;
     position: fixed;
+    cursor: pointer;
 }
 
 .menu .item{
     float: right;
     padding: 15px;
     color: white;
-    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu .item:hover{
+    color: var(--thirdColor);
 }
 
 /* Parent components that should not be reused. Menu, Hero, About, Projects, Contact. */
@@ -232,11 +242,23 @@ body.noScroll #modal{
     min-height: 150px;
     margin: 4.1%;
     float: left;
-    height: 250px;
 }
 
 .projects .projectImage{
     width: 100%;
+}
+
+.projects .detailContainer{
+    position: relative;
+    height: 110px;
+    padding: 10px 0px;
+}
+
+.projects .detailContainer button{
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 50px);
+    margin: 0;
 }
 
 /* Component Contact */
@@ -273,4 +295,59 @@ body.noScroll #modal{
     float: left;
     color: var(--secondColor);
     text-decoration: none;
+}
+
+@media(max-width: 740px){
+
+    .main{
+        padding:20px;
+    }
+    
+    .menu .item{
+        display: none;
+    }
+
+    .hero .heroText {
+        width: 80%;
+        left: 10%;
+        top: 20%;
+    }
+
+    .modal{
+        height: auto;
+    }
+
+    .modal .video {
+        width: 100%;   
+    }
+
+    .modal .content {
+        width: 100%;
+    }
+     
+    .aboutContainer {
+        margin: 50px auto;
+        height: 100%;
+    }
+
+    .about .myStack {
+        margin: 50px auto;
+    }
+
+    .projects .singleProject{
+        width: 100%;
+        max-width: 450px;
+        float: none;
+        margin: 50px auto;
+    }
+
+    .contact .contactMe {
+        width: calc(100% - 40px);
+    }
+
+    .iconContainer a {
+        width: 100%;
+        margin-bottom: 20px;
+    
+    }
 }

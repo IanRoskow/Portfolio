@@ -62,7 +62,7 @@ class Projects extends React.Component {
 
     render() {
         return(
-            <div className="projects">
+            <div className="projects main">
                 <div className="myProjects">
                     <h1>My Projects</h1>
                     <div className='projectContainer'>
