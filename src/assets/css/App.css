@@ -1,0 +1,353 @@
+/*Setting Global Variables for the CSS file */
+:root{
+    --firstColor: #455650;
+    --secondColor: #FFAC1D;
+    --thirdColor: #DFDDC5;
+    --fourthColor: #F7F6E7;
+    --textColor: #000;
+    --backGroundColor: #FFF;
+
+    --descriptionText: 16px;
+    --primaryText: 21px;
+    --subHeaderText: 28px;
+    --headerText: 34px;
+
+
+}
+/* Initial classes can be overridden by classes in the following section */
+.app {
+	scroll-behavior: smooth;
+}
+
+
+h1 {
+    font-size: var(--headerText);
+    font-weight: normal;
+    color: var(--secondColor);
+}
+
+h2 {
+    font-size: var(--subHeaderText);
+    font-weight: normal;
+    color: var(--firstColor);
+}
+
+p{
+    font-size: var(--primaryText);
+}
+
+small {
+    font-size: var(--descriptionText);
+    display: block;
+}
+
+body {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+    font-size: var(--primaryText);
+}
+
+button{
+    background-color: var(--firstColor);
+    color: var(--fourthColor);
+    border: none;
+    border-radius: 5px;
+    min-width: 100px;
+    min-height: 25px;
+    font-size: var(--descriptionText);
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #50635C;
+}
+
+button:active{
+    background-color: #313D39;
+}
+
+body.noScroll{
+    overflow: hidden;
+}
+
+/* One off styling classes for individual elements */
+
+
+
+
+/* Component Modal */
+body #modal{
+    display: none;
+}
+
+body.noScroll #modal{
+    display: block;
+}
+
+#modal{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.background{
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+}
+
+.modal{
+    width: 80%;
+    height: 450px;
+    background-color: white;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    margin-top: -225px;
+    left: 10%;
+    padding: 20px;
+}
+
+.modal .video{
+    width: 50%;
+    float:left;
+}
+
+.modal .video img{
+    width: calc(100%);
+    border: 3px solid var(--secondColor);
+    border-radius: 5px;
+}
+
+.modal .content{
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+
+/*Component - Menu */
+.menu {
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(69,86,80, .75);
+    width: 100%;
+    color: white;
+    height: 50px;
+    box-shadow: 0 4px 2px -2px var(--firstColor);
+}
+
+.menu .logo{
+    left: 20px;
+    top: 15px;
+    position: fixed;
+    cursor: pointer;
+}
+
+.menu .item{
+    float: right;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu .item:hover{
+    color: var(--thirdColor);
+}
+
+/* Parent components that should not be reused. Menu, Hero, About, Projects, Contact. */
+/* Component - Hero */
+
+.hero{
+    background-image: linear-gradient(to bottom, #455650, #475852, #495b54, #4b5d57, #4d6059, #5a6d69, #677b78, #768888, #97a4a8, #bac1c6, #dedfe2, #ffffff);
+    position: relative;
+    height: 800px;
+}
+
+.hero .heroText{
+    font-size: 34px;
+    width: 45%;
+    line-height: 1em;
+    position: absolute;
+    left: 25%;
+    top: 33%;
+    text-align: center;
+}
+
+.hero .heroText h1{
+    color: var(--fourthColor);
+    font-size: 34px;
+    line-height: 1em;
+    text-align: center;
+}
+
+/* Component About */
+
+.about{
+    background-image: linear-gradient(to bottom, #ffffff, #fffcfe, #fffafb, #fff7f5, #fff6ee, #fcf4e8, #f7f2e3, #f1f0de, #ecebd8, #e8e6d1, #e3e2cb, #dfddc5);
+    overflow: hidden;
+}
+
+.aboutContainer{
+    text-align: center;
+    max-width: 800px;
+    margin: 200px auto;
+    height: 600px;
+}
+
+.about .myStack{
+    margin: 100px auto;
+}
+
+
+.about .stack{
+    color: var(--secondColor);
+    margin-top: 20px;
+}
+
+.about .stack small{
+    color: var(--firstColor);
+    padding: 5px 0 0;
+}
+
+/* Component Projects */
+
+.projects{
+    background-image: linear-gradient(to top, #ffffff, #fffcfe, #fffafb, #fff7f5, #fff6ee, #fcf4e8, #f7f2e3, #f1f0de, #ecebd8, #e8e6d1, #e3e2cb, #dfddc5);
+    overflow: hidden;
+}
+
+.projects h1{
+    color: var(--firstColor);
+}
+
+.projects .myProjects{
+    text-align: center;
+    max-width: 800px;
+    margin: 200px auto;
+    min-height: 400px;
+}
+
+.projects .singleProject{
+    width: 25%;
+    border: 1px solid var(--firstColor);
+    border-radius: 5px;
+    min-height: 150px;
+    margin: 4.1%;
+    float: left;
+}
+
+.projects .projectImage{
+    width: 100%;
+}
+
+.projects .detailContainer{
+    position: relative;
+    height: 110px;
+    padding: 10px 0px;
+}
+
+.projects .detailContainer button{
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 50px);
+    margin: 0;
+}
+
+/* Component Contact */
+
+.contact{
+    text-align: center;
+    background-image: linear-gradient(to bottom, #ffffff, #cfd1d5, #9da6aa, #6d7d7e, #455650);    overflow: hidden;
+    min-height: 450px;
+    position: relative;
+}
+
+.contact .contactMe{
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -100px;
+}
+
+.contact h1{
+    color: var(--firstColor);
+}
+.contact h2{
+    color: var(--thirdColor);
+}
+
+.iconContainer{
+    max-width: 800px;
+    margin: 25px auto 50px;
+}
+
+.iconContainer a{
+    width: 25%;
+    float: left;
+    color: var(--secondColor);
+    text-decoration: none;
+}
+
+@media(max-width: 740px){
+
+    .main{
+        padding:20px;
+    }
+    
+    .menu .item{
+        display: none;
+    }
+
+    .hero .heroText {
+        width: 80%;
+        left: 10%;
+        top: 20%;
+    }
+
+    .modal{
+        height: auto;
+    }
+
+    .modal .video {
+        width: 100%;   
+    }
+
+    .modal .content {
+        width: 100%;
+    }
+     
+    .aboutContainer {
+        margin: 50px auto;
+        height: 100%;
+    }
+
+    .about .myStack {
+        margin: 50px auto;
+    }
+
+    .projects .singleProject{
+        width: 100%;
+        max-width: 450px;
+        float: none;
+        margin: 50px auto;
+    }
+
+    .contact .contactMe {
+        width: calc(100% - 40px);
+    }
+
+    .iconContainer a {
+        width: 100%;
+        margin-bottom: 20px;
+    
+    }
+}
