@@ -14,12 +14,12 @@ const projectMap = [
     },
     {
         key: '2',
-        title: 'Streamy',
-        description: 'This is my Streamy App.',
+        title: 'Todo',
+        description: 'A simple vanilla javascript todo list.',
         source: "Git Hub",
         demo: "Demo",
         video: require('../assets/images/SongList.gif'),
-        image: require('../assets/images/Test.JPG')
+        image: require('../assets/images/Todo.png')
     },
     {
         key: '3',
