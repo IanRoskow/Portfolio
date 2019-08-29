@@ -16,6 +16,8 @@ const projectMap = [
         key: '2',
         title: 'Todo',
         description: 'A jQuery todo list.',
+        summary: 'A simple jQuery todo list created using ',
+        stack: 'jQuery - Javascript - Bootstrap - CSS - HTML',
         source: "https://github.com/IanRoskow/Todo",
         demo: "https://ianroskow.github.io/Todo/",
         video: require('../assets/images/Todo.gif'),
@@ -25,10 +27,23 @@ const projectMap = [
         key: '3',
         title: 'Pics Collection',
         description: 'This is an image library built with react.',
-        source: "Git Hub",
-        demo: "Demo",
+        summary: 'This is an image library built with react using axios with the unsplash API. This is using redux with redux thunk.',
+        stack: 'React - Axios - Javascript - Semantic UI - CSS - HTML',
+        source: "https://github.com/IanRoskow/Pics",
+        demo: "https://ianroskow.github.io/Pics/",
         video: require('../assets/images/SongList.gif'),
         image: require('../assets/images/Test.JPG')
+    },
+    {
+        key: '4',
+        title: 'Color Game',
+        description: 'This is a simple game created with vanilla Javascript.',
+        summary: 'This is a simple game created with vanilla Javascript.',
+        stack: 'Javascript - CSS - HTML',
+        source: "https://github.com/IanRoskow/rgbGame",
+        demo: "https://ianroskow.github.io/rgbGame/",
+        video: require('../assets/images/SongList.gif'),
+        image: require('../assets/images/rgbGame.png')
     }
 ]
 
@@ -36,6 +51,8 @@ class Projects extends React.Component {
     state = {
         title: "",
         description: "",
+        summary: "",
+        stack: "",
         source: "",
         demo: "",
         video: ""
@@ -49,10 +66,12 @@ class Projects extends React.Component {
         return projects;
     }
 
-    updateState= ({title, description, source, demo, video}) => {
+    updateState= ({title, description, summary, stack, source, demo, video}) => {
         this.setState({
             title,
             description,
+            summary,
+            stack,
             source,
             demo,
             video
@@ -71,7 +90,8 @@ class Projects extends React.Component {
                 </div>
                 <Modal 
                     title={this.state.title}
-                    description={this.state.description}
+                    summary={this.state.summary}
+                    stack={this.state.stack}
                     source={this.state.source}
                     demo={this.state.demo}
                     video={this.state.video}
