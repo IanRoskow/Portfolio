@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const closeModal = (clearState) => {
+    document.querySelector("body").classList.remove("noScroll");
+    clearState();
+}
+
 const Modal = props => {
     return ReactDOM.createPortal(
-        <div onClick={() => document.querySelector("body").classList.remove("noScroll")} className='background'>
+        <div onClick={() => closeModal(props.callBack)} className='background'>
             <div onClick={(e) => e.stopPropagation()} className="modal">
                 <div className='video'>
                     <img src={props.video} alt={props.title}/>

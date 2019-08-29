@@ -6,11 +6,13 @@ const projectMap = [
     {
         key: '1',
         title: 'My Portfolio',
-        description: 'This is my portfolio.',
-        source: "Git Hub",
-        demo: "Demo",
-        video: require('../assets/images/SongList.gif'),
-        image: require('../assets/images/Test.JPG')
+        description: 'My portfolio site built with ReactJS, and CSS3.',
+        summary: "My portfolio site to show case my work and side projects. I built this using React and am simply hosting it on Git Hub since there is no backend neccesary. I designed this site myself and decided not to use a css framework to keep the site light. I hope you enjoy it.",
+        stack: "ReactJS - CSS3 - HTML",
+        source: "https://github.com/IanRoskow/Portfolio",
+        demo: "https://ianroskow.github.io/Portfolio/",
+        video: require('../assets/images/Todo.gif'),
+        image: require('../assets/images/Portfolio.png')
     },
     {
         key: '2',
@@ -31,8 +33,8 @@ const projectMap = [
         stack: 'React - Axios - Javascript - Semantic UI - CSS - HTML',
         source: "https://github.com/IanRoskow/Pics",
         demo: "https://ianroskow.github.io/Pics/",
-        video: require('../assets/images/SongList.gif'),
-        image: require('../assets/images/Test.JPG')
+        video: require('../assets/images/Pics.gif'),
+        image: require('../assets/images/Pics.png')
     },
     {
         key: '4',
@@ -42,7 +44,7 @@ const projectMap = [
         stack: 'Javascript - CSS - HTML',
         source: "https://github.com/IanRoskow/rgbGame",
         demo: "https://ianroskow.github.io/rgbGame/",
-        video: require('../assets/images/SongList.gif'),
+        video: require('../assets/images/rgbGame.gif'),
         image: require('../assets/images/rgbGame.png')
     }
 ]
@@ -66,7 +68,7 @@ class Projects extends React.Component {
         return projects;
     }
 
-    updateState= ({title, description, summary, stack, source, demo, video}) => {
+    updateState = ({title, description, summary, stack, source, demo, video}) => {
         this.setState({
             title,
             description,
@@ -75,6 +77,18 @@ class Projects extends React.Component {
             source,
             demo,
             video
+        });
+    }
+
+    clearState = () => {
+        this.setState({
+            title: "",
+            description: "",
+            summary: "",
+            stack: "",
+            source: "",
+            demo: "",
+            video: ""
         });
     }
 
@@ -95,27 +109,11 @@ class Projects extends React.Component {
                     source={this.state.source}
                     demo={this.state.demo}
                     video={this.state.video}
+                    callBack={this.clearState}
                 />
             </div>
         );
     }
 }
-
-// const Projects = () => {
-//     const projects = projectMap.map((project) => {
-//         return <ProjectList key={project.title} project={project} />;
-//     })
-
-//     return (
-//         <div className="projects">
-//             <div className="myProjects">
-//                 <h1>My Projects</h1>
-//                 <div className='projectContainer'>
-//                     {projects}
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
 
 export default Projects;

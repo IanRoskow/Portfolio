@@ -149,12 +149,13 @@ body.noScroll #modal{
     top: 15px;
     position: fixed;
     cursor: pointer;
+    color: var(--secondColor);
 }
 
 .menu .item{
     float: right;
     padding: 15px;
-    color: white;
+    color: var(--thirdColor);
     cursor: pointer;
 }
 

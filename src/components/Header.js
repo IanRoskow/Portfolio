@@ -29,7 +29,7 @@ const Header = () => {
     return (
         <div className="menu">
             <div onClick={() => scrollPage('home')} className="logo">
-                Logo
+                {`< Roskow >`}
             </div>
             <div onClick={() => scrollPage('contact')} className="item">
                 Contact

@@ -2,8 +2,6 @@ import React from 'react';
 
 const updateModal = (props) => {
     document.querySelector("body").classList.add("noScroll");
-    console.log(props.project);
-    console.log(props.callBack)
     props.callBack(props.project);
 }
 
