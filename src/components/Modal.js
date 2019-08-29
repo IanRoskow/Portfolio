@@ -12,8 +12,8 @@ const Modal = props => {
                     <h2 className='title'>{props.title}</h2>
                     <p className='description'>{props.description}</p>
                     <div className='container'>
-                        <button >{props.demo}</button>
-                        <button>{props.source}</button>
+                        <button onClick={() => window.open(`${props.demo}`)}>Demo</button>
+                        <button onClick={() => window.open(`${props.source}`)}>Source Code</button>
                     </div>
                 </div>
             </div>

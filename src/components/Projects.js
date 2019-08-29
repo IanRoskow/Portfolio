@@ -15,10 +15,10 @@ const projectMap = [
     {
         key: '2',
         title: 'Todo',
-        description: 'A simple vanilla javascript todo list.',
-        source: "Git Hub",
-        demo: "Demo",
-        video: require('../assets/images/SongList.gif'),
+        description: 'A jQuery todo list.',
+        source: "https://github.com/IanRoskow/Todo",
+        demo: "https://ianroskow.github.io/Todo/",
+        video: require('../assets/images/Todo.gif'),
         image: require('../assets/images/Todo.png')
     },
     {
