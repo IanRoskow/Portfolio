@@ -150,6 +150,7 @@ body.noScroll #modal{
     position: fixed;
     cursor: pointer;
     color: var(--secondColor);
+    font-size: var(--subHeaderText);
 }
 
 .menu .item{
