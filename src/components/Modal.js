@@ -15,7 +15,7 @@ const Modal = props => {
                 </div>
                 <div className='content'>
                     <h2 className='title'>{props.title}</h2>
-                    <p className='description'>{props.summary}</p>
+                    <small className='description'>{props.summary}</small>
                     <small className='stack'>{props.stack}</small>
                     <div className='container'>
                         <button onClick={() => window.open(`${props.demo}`)}>Demo</button>
