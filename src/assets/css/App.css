@@ -119,10 +119,6 @@ body.noScroll #modal{
 .modal .video{
     width: 60%;
     float:left;
-}
-
-.modal .video img{
-    width: calc(100%);
     border: 3px solid var(--firstColor);
     border-radius: 5px;
 }
@@ -213,13 +209,19 @@ body.noScroll #modal{
     height: auto;
 }
 
+.about .aboutSection{
+    font-size: var(--primaryText);
+    line-height: 1.2;
+    margin-bottom: 75px;
+}
+
 .about .headers{
     color: var(--firstColor);
     font-size: var(--subHeaderText);
 }
 
 .about .myStack{
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 
@@ -334,7 +336,7 @@ body.noScroll #modal{
     .hero .heroText {
         width: 80%;
         left: 10%;
-        top: 20%;
+        top: 35%;
     }
 
     .modal{
@@ -343,12 +345,7 @@ body.noScroll #modal{
     }
 
     .modal .video {
-        width: 100%; 
-    }
-
-    .modal .video img{
-        border-radius: 0;
-        border: none;  
+        display: none; 
     }
 
     .modal .content {
@@ -428,7 +425,7 @@ body.noScroll #modal{
       -webkit-transform-origin: 50% 50%;
               transform-origin: 50% 50%;
       text-shadow: 0 50px 30px rgba(0, 0, 0, 0.3);
-      color: rgba(255, 172, 29, 1);
+      color: rgba(247, 246, 231, 1);
     }
   }
   @keyframes text-pop-up-top {
@@ -446,7 +443,7 @@ body.noScroll #modal{
       -webkit-transform-origin: 50% 50%;
               transform-origin: 50% 50%;
         text-shadow: 0 50px 30px rgba(0, 0, 0, 0.3);
-        color: rgba(255, 172, 29, 1);    
+        color: rgba(247, 246, 231, 1);    
     }
   }
   
