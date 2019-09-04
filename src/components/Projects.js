@@ -33,7 +33,7 @@ const projectMap = [
         stack: 'React - Axios - Javascript - Semantic UI - CSS - HTML',
         source: "https://github.com/IanRoskow/Pics",
         demo: "https://ianroskow.github.io/Pics/",
-        video: require('../assets/images/Pics.mp4'),
+        video: require("../assets/images/Pics.mp4"),
         image: require('../assets/images/Pics.png')
     },
     {
