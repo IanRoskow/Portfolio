@@ -4,13 +4,13 @@ const scrollPage = (position) => {
     const desktop = {
         home: 0,
         about: 916,
-        projects: 1922,
-        contact: 2247
+        projects: 2397,
+        contact: 3146.5
     }
     const mobile = {
         home: 0,
         about: 916,
-        projects: 1922,
+        projects: 2397,
         contact: 4077
     }
     window.screenY > 740 ? window.scroll({
