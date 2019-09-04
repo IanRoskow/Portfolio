@@ -11,7 +11,11 @@ const Modal = props => {
         <div onClick={() => closeModal(props.callBack)} className='background'>
             <div onClick={(e) => e.stopPropagation()} className="modal">
                 <div className='video'>
-                    <img src={props.video} alt={props.title}/>
+                    <video loop autoPlay>
+                        <source src={props.video} type="video/mp4" />
+                        <source src={props.video} type="video/ogg" />
+                        Your browser does not support the video tag.
+                    </video> 
                 </div>
                 <div className='content'>
                     <h2 className='title'>{props.title}</h2>
