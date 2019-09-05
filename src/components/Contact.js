@@ -8,7 +8,7 @@ const Contact = () => {
                 <h2>ianroskow@gmail.com</h2>
                 <div className='iconContainer'>
                     <a href="https://github.com/IanRoskow" rel="noopener noreferrer" target="_blank">
-                        Git Hub
+                        GitHub
                     </a>
                     <a href="https://www.linkedin.com/in/ian-roskow-5b1270a6/" rel="noopener noreferrer" target="_blank">
                         LinkedIn
