@@ -11,7 +11,7 @@ const projectMap = [
         stack: "ReactJS - CSS3 - HTML",
         source: "https://github.com/IanRoskow/Portfolio",
         demo: "https://ianroskow.github.io/Portfolio/",
-        video: require('../assets/images/Todo.mp4'),
+        video: require('../assets/images/Portfolio.mp4'),
         image: require('../assets/images/Portfolio.png')
     },
     {
