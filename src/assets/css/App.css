@@ -119,8 +119,6 @@ body.noScroll #modal{
 .modal .video{
     width: 60%;
     float:left;
-    border: 3px solid var(--firstColor);
-    border-radius: 5px;
 }
 
 .modal .content{
@@ -255,7 +253,7 @@ body.noScroll #modal{
 
 .projects .singleProject{
     width: 25%;
-    border: 1px solid var(--firstColor);
+    border: 2px solid var(--firstColor);
     border-radius: 5px;
     min-height: 150px;
     margin: 4.1%;
