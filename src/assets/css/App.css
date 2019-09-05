@@ -255,7 +255,7 @@ body.noScroll #modal{
     width: 25%;
     border: 2px solid var(--firstColor);
     border-radius: 5px;
-    min-height: 150px;
+    height: 370px;
     margin: 4.1%;
     float: left;
 }
