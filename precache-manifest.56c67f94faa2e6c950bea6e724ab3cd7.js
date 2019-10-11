@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "804424f3a689c93186f69a079248525a",
+    "revision": "e07aacc5ec6a67d3b091856c5ded52ea",
     "url": "/index.html"
   },
   {
-    "revision": "8a22827e5a718069f84c",
+    "revision": "310ba04696ca969cbb56",
     "url": "/static/css/main.3cb5049a.chunk.css"
   },
   {
@@ -12,12 +12,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.5aa7908d.chunk.js"
   },
   {
-    "revision": "8a22827e5a718069f84c",
-    "url": "/static/js/main.d2b57542.chunk.js"
+    "revision": "310ba04696ca969cbb56",
+    "url": "/static/js/main.075d59f5.chunk.js"
   },
   {
     "revision": "e676c0768ba9136fc741",
     "url": "/static/js/runtime~main.daaf4d4d.js"
+  },
+  {
+    "revision": "23245b9b19a618ba1e2594dfded53551",
+    "url": "/static/media/IanRoskowResume.23245b9b.pdf"
   },
   {
     "revision": "5ccd978f1323f14e3e936b6b4054fb04",
@@ -34,10 +38,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c5c7193e0416db723608dd3d763be085",
     "url": "/static/media/Portfolio.c5c7193e.mp4"
-  },
-  {
-    "revision": "c6f8b9dceff03ba349f284bebfff9f9b",
-    "url": "/static/media/Resume.c6f8b9dc.pdf"
   },
   {
     "revision": "7cb49e9798a776cd42a8bf9d6c94a2d4",
