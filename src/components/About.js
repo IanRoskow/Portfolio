@@ -28,15 +28,6 @@ const About = () => {
           coworkers.
           <br />
           <br />
-          <div className='headers'>The Opportunity</div>
-          In June of 2019 my family and I pursued an opportunity to move to
-          Barcelona, Spain, and we knew we would be remiss if we did not pursue
-          it. So I quit my job and took a few months off to ease the transition
-          and to focus on directing my future career path. During these last few
-          months I have completed several Udemy classes, expanded my online
-          portfolio, and obtained freelance work.
-          <br />
-          <br />
           <div className='headers'>Now</div>I am now looking for a full time
           opportunity to join a remote team of developers, where I can be
           challenged and develop meaningful applications. My stack, resume, and
@@ -46,7 +37,10 @@ const About = () => {
         <div>
           <button
             onClick={() =>
-              window.open(require('../assets/documents/Resume.pdf'), 'blank')
+              window.open(
+                require('../assets/documents/IanRoskowResume.pdf'),
+                'blank'
+              )
             }
           >
             Resume
