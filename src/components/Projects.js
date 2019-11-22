@@ -1,6 +1,5 @@
 import React from 'react';
 import ProjectList from './ProjectList';
-import Modal from './Modal';
 
 const projectMap = [
   {
@@ -116,7 +115,7 @@ class Projects extends React.Component {
           <h1>My Projects</h1>
           <div className='projectContainer'>{this.getProjects()}</div>
         </div>
-        <Modal
+        {/* <Modal
           title={this.state.title}
           summary={this.state.summary}
           stack={this.state.stack}
@@ -124,7 +123,7 @@ class Projects extends React.Component {
           demo={this.state.demo}
           video={this.state.video}
           callBack={this.clearState}
-        />
+        /> */}
       </div>
     );
   }

@@ -1,4 +1,4 @@
-/*Setting Global Variables for the CSS file */
+/* Setting Global Variables for the CSS file
 :root {
   --firstColor: #455650;
   --secondColor: #ffac1d;
@@ -15,7 +15,7 @@
   --c: 5s;
 }
 /* Initial classes can be overridden by classes in the following section */
-.app {
+/* .app {
   scroll-behavior: smooth;
 }
 
