@@ -1,102 +1,157 @@
 import React from 'react';
 import styled from 'styled-components';
-const Container = styled.div``;
+import { Icon } from 'semantic-ui-react';
+import { Container, SectionHeader } from '../StyledComponents/GlobalsStyles';
+import Button from '../Button';
 
 const Header = styled.h1`
+  &&& {
+    text-align: center;
+    color: ${({ theme }) => theme.primary1};
+    margin: 0px 0px 20px;
+  }
+`;
+
+const IconTitle = styled.h1`
   text-align: center;
-  color: ${({ theme }) => theme.primary1};
+  margin: 5px;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 200px 400px 100px;
+  grid-template-rows: 200px 400px;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-  & > * {
-    background-color: teal;
+  grid-gap: 40px 20px;
+
+  @media (max-width: 768px) {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 const GridItem = styled.div`
   text-align: center;
+  @media (min-width: 769px) {
+    grid-row: 1/2;
+  }
+`;
+
+const StyledIcon = styled(Icon)`
+  &&&&& {
+    background-color: ${({ theme }) => theme.secondary1} !important;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0.25em 0 !important;
+    border-radius: 5px;
+  }
 `;
 
 const ProfilePhoto = styled.div`
   grid-column: 1/3;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    grid-column: 1/-1;
+  }
 `;
 
 const Stack = styled.div`
   grid-column: 3/5;
+  text-align: center;
+  @media (max-width: 768px) {
+    grid-column: 1/-1;
+  }
 `;
 
-const Connect = styled.div`
-  grid-column: 1 / -1;
-`;
+const StackRow = props => {
+  const Row = styled.div`
+    margin-bottom: 15px;
+  `;
+  const StyledRow = styled.span`
+    color: ${props =>
+      props.primary ? props.theme.primary2 : props.theme.secondary1};
+    padding: 5px;
+    font-weight: bold;
+  `;
+
+  let expertSkills = [],
+    knowledgableSkills = [];
+
+  if (props.expert)
+    expertSkills = props.expert.map(el => <StyledRow primary>{el}</StyledRow>);
+
+  if (props.knowledgable)
+    knowledgableSkills = props.knowledgable.map(el => (
+      <StyledRow>{el}</StyledRow>
+    ));
+  return (
+    <Row>
+      {expertSkills}
+      {knowledgableSkills}
+    </Row>
+  );
+};
 
 const About = () => {
   return (
     <Container>
-      <Header>About Me</Header>
+      <SectionHeader>About Me</SectionHeader>
       <Grid>
-        <GridItem>
-          <h1>Fast</h1>
-        </GridItem>
-        <GridItem>
-          <h1>Responsive</h1>
-        </GridItem>
-        <GridItem>
-          <h1>Intuitive</h1>
-        </GridItem>
-        <GridItem>
-          <h1>Dynamic</h1>
-        </GridItem>
         <ProfilePhoto>
-          <div>Profile Photo</div>
-          <div>Lorem Ipsum</div>
+          <img
+            style={{ width: '50%', borderRadius: '5%' }}
+            src={require('../../assets/images/ProfilePhoto.JPG')}
+            alt='There should be a nice here.'
+          />
+          <p style={{ padding: '10px' }}>
+            Highly skilled front-end developer proven by the implementation of
+            multiple web solutions with 1,000s of active daily users for large
+            corporate companies. His work ethic, unique skillset, and proven
+            track record of exceeding client exceptions has made him a desired
+            project team member by many of his peers and managers.
+          </p>
         </ProfilePhoto>
         <Stack>
-          <h2>My Stack</h2>
-          <div>
-            <div className='stack'>
-              Top Skills
-              <small>
-                HTML5 - CSS3 - Javascript - ReactJS - Redux - Babel - Git -
-                Agile - Adobe XD
-              </small>
-            </div>
-            <div className='stack'>
-              Knowledgable
-              <small>
-                NodeJS - Express - MongoDB - JQuery - Bootstrap - SASS -
-                Sharepoint
-              </small>
-            </div>
-          </div>
+          <Header>My Stack</Header>
+          <StackRow expert={['HTML5']} />
+          <StackRow
+            expert={['CSS3', 'Styled Components', 'Semantic UI']}
+            knowledgable={['SASS', 'Bootstrap']}
+          />
+          <StackRow expert={['JavaScript', 'ReactJS', 'Redux', 'jQuery']} />
+          <StackRow knowledgable={['NodeJS', 'Express', 'C#']} />
+          <StackRow knowledgable={['MongoDB', 'SQL']} />
+          <StackRow expert={['Git', 'VS Code', 'AdobeSuite']} />
+          <StackRow
+            expert={['SharePoint', 'Agile', 'BEM']}
+            knowledgable={['WordPress']}
+          />
+          <br />
+          <br />
+          <StackRow expert={['Proficient']} knowledgable={['Knowledgable']} />
         </Stack>
-        <Connect>
-          <div>
-            <button
-              onClick={() =>
-                window.open(
-                  require('../../assets/documents/IanRoskowResume.pdf'),
-                  'blank'
-                )
-              }
-            >
-              Resume
-            </button>
-            <button
-              onClick={() =>
-                window.open(
-                  'https://www.linkedin.com/in/ian-roskow-5b1270a6/',
-                  'blank'
-                )
-              }
-            >
-              Linked In
-            </button>
-          </div>
-        </Connect>
+        <GridItem>
+          <StyledIcon bordered inverted size='huge' name='stopwatch' />
+          <IconTitle>Fast</IconTitle>
+          <p>Fast load times and lag free interaction, my highest priority.</p>
+        </GridItem>
+        <GridItem>
+          <StyledIcon bordered inverted size='huge' name='mobile alternate' />
+          <IconTitle>Responsive</IconTitle>
+          <p>My layouts will work on any device, big or small.</p>
+        </GridItem>
+        <GridItem>
+          <StyledIcon bordered inverted size='huge' name='thumbs up outline' />
+          <IconTitle>Intuitive</IconTitle>
+          <p>Strong preference for easy to use, intuitive UX/UI.</p>
+        </GridItem>
+        <GridItem>
+          <StyledIcon bordered inverted size='huge' name='cog' />
+          <IconTitle>Dynamic</IconTitle>
+          <p>
+            Websites don't have to be static, I love making pages come to life.
+          </p>
+        </GridItem>
       </Grid>
     </Container>
   );

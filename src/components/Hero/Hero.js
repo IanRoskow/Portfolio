@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import Button from '../Button';
 
 class Hero extends React.Component {
   componentDidMount() {
@@ -11,19 +12,18 @@ class Hero extends React.Component {
     };
     var sun = false;
     let key = -1;
-    let xmouse, ymouse, dx, dy;
+    let xmouse, ymouse, dx, dy, xdiff, ydiff;
 
     function resize() {
-      var box = c.getBoundingClientRect();
-      c.width = box.width;
-      c.height = box.height;
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
       light = {
         x: c.width / 2,
         y: c.height / 2
       };
     }
 
-    var colors = ['#7395ae', '#557a95', '#b1a296'];
+    var colors = ['#7395ae', '#557a95', '#c49f6f'];
 
     function drawLight() {
       ctx.beginPath();
@@ -40,10 +40,11 @@ class Hero extends React.Component {
       gradient.addColorStop(1, '#2c343f');
       ctx.fillStyle = gradient;
       ctx.fill();
+
       if (sun) {
         ctx.beginPath();
         ctx.arc(light.x, light.y, 20, 0, 2 * Math.PI);
-        var gradient = ctx.createRadialGradient(
+        gradient = ctx.createRadialGradient(
           light.x,
           light.y,
           0,
@@ -52,6 +53,7 @@ class Hero extends React.Component {
           5
         );
         gradient.addColorStop(0, '#fff');
+        gradient.addColorStop(0.3, '#fff');
         gradient.addColorStop(1, '#3b4654');
         ctx.fillStyle = gradient;
         ctx.fill();
@@ -161,7 +163,6 @@ class Hero extends React.Component {
         boxes[i].drawShadow();
       }
       for (var i = 0; i < boxes.length; i++) {
-        collisionDetection(i);
         boxes[i].draw();
       }
       requestAnimationFrame(draw);
@@ -178,46 +179,30 @@ class Hero extends React.Component {
     c.onmousemove = function(e) {
       xmouse = e.offsetX == undefined ? e.layerX : e.offsetX;
       ymouse = e.offsetY == undefined ? e.layerY : e.offsetY;
-      // light.x = e.offsetX == undefined ? e.layerX : e.offsetX;
-      // light.y = e.offsetY == undefined ? e.layerY : e.offsetY;
       if (!sun) {
-        followMouse();
+        key = requestAnimationFrame(followMouse);
       }
       sun = true;
     };
 
     function followMouse() {
       key = requestAnimationFrame(followMouse);
-      console.log(light.x);
+      xdiff = xmouse - light.x;
+      ydiff = ymouse - light.y;
       if (!light.x || !light.y) {
         light.x = xmouse;
         light.y = ymouse;
       } else {
-        dx = (xmouse - light.x) * 0.0125;
-        dy = (ymouse - light.y) * 0.0125;
+        dx = xdiff * 0.015;
+        dy = ydiff * 0.015;
         if (Math.abs(dx) + Math.abs(dy) < 0.1) {
           light.x = xmouse;
           light.y = ymouse;
+          window.cancelAnimationFrame(key);
+          sun = false;
         } else {
           light.x += dx;
           light.y += dy;
-        }
-      }
-    }
-    function collisionDetection(b) {
-      for (var i = boxes.length - 1; i >= 0; i--) {
-        if (i != b) {
-          var dx =
-            boxes[b].x + boxes[b].half_size - (boxes[i].x + boxes[i].half_size);
-          var dy =
-            boxes[b].y + boxes[b].half_size - (boxes[i].y + boxes[i].half_size);
-          var d = Math.sqrt(dx * dx + dy * dy);
-          if (d < boxes[b].half_size + boxes[i].half_size) {
-            boxes[b].half_size =
-              boxes[b].half_size > 1 ? (boxes[b].half_size -= 1) : 1;
-            boxes[i].half_size =
-              boxes[i].half_size > 1 ? (boxes[i].half_size -= 1) : 1;
-          }
         }
       }
     }
@@ -230,6 +215,17 @@ class Hero extends React.Component {
             Hello, I'm <span>Ian Roskow.</span>
           </div>
           <div>I'm a front end web devloper.</div>
+          <Button
+            Text='Learn More'
+            Icon='angle down'
+            onClick={() =>
+              window.scroll({
+                top: window.innerHeight,
+                left: 0,
+                behavior: 'smooth'
+              })
+            }
+          />
         </div>
         <canvas id='canvas'></canvas>
       </div>
