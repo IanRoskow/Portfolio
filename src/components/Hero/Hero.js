@@ -4,7 +4,7 @@ import Button from '../Button';
 
 class Hero extends React.Component {
   componentDidMount() {
-    var c = document.getElementById('canvas');
+    var c = this.refs.canvas;
     var ctx = c.getContext('2d');
     var light = {
       x: c.width / 2,
@@ -227,7 +227,7 @@ class Hero extends React.Component {
             }
           />
         </div>
-        <canvas id='canvas'></canvas>
+        <canvas ref='canvas' id='canvas'></canvas>
       </div>
     );
   }
