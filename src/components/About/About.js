@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 import { Container, SectionHeader } from '../StyledComponents/GlobalsStyles';
-import Button from '../Button';
 
 const Header = styled.h1`
   &&& {
@@ -78,11 +77,15 @@ const StackRow = props => {
     knowledgableSkills = [];
 
   if (props.expert)
-    expertSkills = props.expert.map(el => <StyledRow primary>{el}</StyledRow>);
+    expertSkills = props.expert.map(el => (
+      <StyledRow key={el} primary>
+        {el}
+      </StyledRow>
+    ));
 
   if (props.knowledgable)
     knowledgableSkills = props.knowledgable.map(el => (
-      <StyledRow>{el}</StyledRow>
+      <StyledRow key={el}>{el}</StyledRow>
     ));
   return (
     <Row>

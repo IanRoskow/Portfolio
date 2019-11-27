@@ -59,7 +59,7 @@ const Contact = () => {
         />
         <Button
           circular
-          color='resume'
+          color='grey'
           icon='file alternate outline'
           onClick={() =>
             window.open(

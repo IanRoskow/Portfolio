@@ -140,7 +140,7 @@ class Hero extends React.Component {
         }
 
         for (var i = points.length - 1; i >= 0; i--) {
-          var n = i == 3 ? 0 : i + 1;
+          var n = i === 3 ? 0 : i + 1;
           ctx.beginPath();
           ctx.moveTo(points[i].startX, points[i].startY);
           ctx.lineTo(points[n].startX, points[n].startY);
@@ -158,11 +158,11 @@ class Hero extends React.Component {
       ctx.clearRect(0, 0, c.width, c.height);
       drawLight();
 
-      for (var i = 0; i < boxes.length; i++) {
+      for (let i = 0; i < boxes.length; i++) {
         boxes[i].rotate();
         boxes[i].drawShadow();
       }
-      for (var i = 0; i < boxes.length; i++) {
+      for (let i = 0; i < boxes.length; i++) {
         boxes[i].draw();
       }
       requestAnimationFrame(draw);
@@ -177,8 +177,8 @@ class Hero extends React.Component {
 
     window.onresize = resize;
     c.onmousemove = function(e) {
-      xmouse = e.offsetX == undefined ? e.layerX : e.offsetX;
-      ymouse = e.offsetY == undefined ? e.layerY : e.offsetY;
+      xmouse = e.offsetX === undefined ? e.layerX : e.offsetX;
+      ymouse = e.offsetY === undefined ? e.layerY : e.offsetY;
       if (!sun) {
         key = requestAnimationFrame(followMouse);
       }
@@ -209,8 +209,8 @@ class Hero extends React.Component {
   }
   render() {
     return (
-      <div class='hero'>
-        <div class='title'>
+      <div className='hero'>
+        <div className='title'>
           <div>
             Hello, I'm <span>Ian Roskow.</span>
           </div>

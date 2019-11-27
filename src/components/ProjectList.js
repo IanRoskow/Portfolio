@@ -49,7 +49,6 @@ const Disclaimer = styled.p`
 
 const ProjectList = props => {
   let flexDirection = props.project.key % 2 ? 'row-reverse' : 'row';
-  console.log(props.project.key);
   const ProjectFlex = styled.div`
     display: flex;
     flex-direction: ${flexDirection};
