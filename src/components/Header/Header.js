@@ -90,15 +90,15 @@ const scrollPage = position => {
   const desktop = {
     home: 0,
     about: 20,
-    projects: 600,
-    contact: 1200
+    projects: 950,
+    contact: 3320
   };
 
   const mobile = {
     home: 0,
     about: 20,
-    projects: 1000,
-    contact: 2000
+    projects: 1612,
+    contact: 5023
   };
 
   let goto = window.innerWidth > 780 ? desktop[position] : mobile[position];

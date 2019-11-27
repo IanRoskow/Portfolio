@@ -118,7 +118,7 @@ const About = () => {
             expert={['CSS3', 'Styled Components', 'Semantic UI']}
             knowledgable={['SASS', 'Bootstrap']}
           />
-          <StackRow expert={['JavaScript', 'ReactJS', 'Redux', 'jQuery']} />
+          <StackRow expert={['JavaScript', 'React', 'Redux', 'jQuery']} />
           <StackRow knowledgable={['NodeJS', 'Express', 'C#']} />
           <StackRow knowledgable={['MongoDB', 'SQL']} />
           <StackRow expert={['Git', 'VS Code', 'AdobeSuite']} />
@@ -128,29 +128,35 @@ const About = () => {
           />
           <br />
           <br />
-          <StackRow expert={['Proficient']} knowledgable={['Knowledgable']} />
+          <StackRow
+            expert={['-Proficient-']}
+            knowledgable={['-Knowledgable-']}
+          />
         </Stack>
         <GridItem>
           <StyledIcon bordered inverted size='huge' name='stopwatch' />
           <IconTitle>Fast</IconTitle>
-          <p>Fast load times and lag free interaction, my highest priority.</p>
+          <p>
+            Quick page load times, lag free interaction, and user content first.
+          </p>
         </GridItem>
         <GridItem>
           <StyledIcon bordered inverted size='huge' name='mobile alternate' />
           <IconTitle>Responsive</IconTitle>
-          <p>My layouts will work on any device, big or small.</p>
+          <p>
+            Websites look great on any screen size, no device is an after
+            thought.
+          </p>
         </GridItem>
         <GridItem>
           <StyledIcon bordered inverted size='huge' name='thumbs up outline' />
-          <IconTitle>Intuitive</IconTitle>
-          <p>Strong preference for easy to use, intuitive UX/UI.</p>
+          <IconTitle>User Friendly</IconTitle>
+          <p>Easy to use and intuitive pages built on UX/UI principles.</p>
         </GridItem>
         <GridItem>
           <StyledIcon bordered inverted size='huge' name='cog' />
           <IconTitle>Dynamic</IconTitle>
-          <p>
-            Websites don't have to be static, I love making pages come to life.
-          </p>
+          <p>Improving user experience by making webpages come to life.</p>
         </GridItem>
       </Grid>
     </Container>

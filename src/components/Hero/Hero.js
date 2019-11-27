@@ -214,9 +214,9 @@ class Hero extends React.Component {
           <div>
             Hello, I'm <span>Ian Roskow.</span>
           </div>
-          <div>I'm a front end web devloper.</div>
+          <div>I'm a front-end web developer.</div>
           <Button
-            Text='Learn More'
+            Text='View my work'
             Icon='angle down'
             onClick={() =>
               window.scroll({

@@ -7,41 +7,42 @@ const projectMap = [
     key: '1',
     title: 'My Portfolio Site',
     summary:
-      'My portfolio site to show case my work and side projects. I built this using ReactJS and hosting it on Git Hub. I designed this site myself and decided not to use a css framework to keep the site light. I hope you enjoy it.',
-    stack: 'ReactJS - CSS3 - HTML',
+      'The site you are currently on, my portfolio site to show case my work and side projects. I built this using React and Styled Components. I am hosting it using Gatsby to ensure I have solid SEO. I hope you enjoy it.',
+    stack: 'React - Styled Components - Gatsby',
     source: 'https://github.com/IanRoskow/Portfolio',
-    demo: 'https://ianroskow.github.io/Portfolio/',
+    demo: 'https://ianroskow.com',
     image: require('../assets/images/Portfolio.png')
   },
   {
     key: '2',
-    title: 'Todo',
+    title: 'Netflix Search',
     summary:
-      'A simple jQuery todo list created using the jQuery Library, CSS3, and HTMl. This project was to experiment with simple Dom manipulation using the jQuery library. This todo list can add, mark finished, and delete items, it also is mobile responsive. This was a simple coding task in a Udemy course I took, The Web Developer Bootcamp.',
-    stack: 'jQuery - Javascript - CSS3 - Font Awesome - HTML5',
-    source: 'https://github.com/IanRoskow/Todo',
-    demo: 'https://ianroskow.github.io/Todo/',
-    image: require('../assets/images/Todo.png')
+      'Did you know that Netflix streams different content in different countries? This side project searches the global Netflix repository based on a search term or a genre, and returns information on where that movie/show is streaming. I built this application using React, Styled Components, Axios, and using Rapid API. The design was inspired by the Netflix current style guide. I am very proud of this project because it started as an idea and now is a full application. ',
+    stack: 'React - React Hooks - Styled Components - Axios',
+    source: 'https://github.com/IanRoskow/netflix-search',
+    demo: 'https://netflixsearch.netlify.com',
+    image: require('../assets/images/Netflix.png')
   },
   {
     key: '3',
-    title: 'Pics Collection',
+    title: 'Quality Improvement',
     summary:
-      'A beautiful stock image search web application. This image library was built to experiment with calling APIs using axios within a React component. A search term is sent to the Unsplash API and returns 30 images that match that term. This application then arranges them into a beautiful grid that was created using CSS3. This was an assignment in a udemy course, Modern React with Redux.',
-    stack: 'ReactJS - Axios - Javascript - Semantic UI - CSS - HTML',
-    source: 'https://github.com/IanRoskow/Pics',
-    demo: 'https://ianroskow.github.io/Pics/',
-    image: require('../assets/images/Pics.png')
+      'My team of 4 created a quality management system where manufacturing instructions could be accesible and risk management processes could be managed for a top explosives manufacturing company. My role on this project as lead front-end developer was to decide on our front-end technologies, implement a code management structure, design web mockups, and devlop dynamic web pages. As a lead I had to manage the client relationship, lead demos, and was the subject matter expert for any front end development questions.',
+    stack: 'jQuery - Javascript - CSS3 - HTML5 - SharePoint - Agile',
+    disclaimer:
+      'Due to client confidentiality I can not share the source code for this project.',
+    image: require('../assets/images/QualityProject.png')
   },
   {
     key: '4',
-    title: 'RGB Color Game',
+    title: 'Content Sharing Project',
     summary:
-      'This is a simple game created with vanilla Javascript and CSS3. It has two different modes of play easy and hard, and can be reset at any point. This project was used to demonstrate ability to edit dom objects based on user interaction. This was a simple coding task in a Udemy course I took, The Web Developer Bootcamp.   ',
-    stack: 'Javascript - CSS - HTML',
-    source: 'https://github.com/IanRoskow/rgbGame',
-    demo: 'https://ianroskow.github.io/rgbGame/',
-    image: require('../assets/images/rgbGame.png')
+      "My team of 5 created this content sharing platform over a course of 2 years for a fortune 500 oil and gas company. My role on this project as front-end developer was to create dynamic web pages based on photoshop designs. My responsibilities did not stop at front end developement, becasue of our small team I also worked on CRUD operations, analytics, database management, third party platform integrations, and UX/UI design. Our team exceeded the client's expectations and was given continuation work based on our success of this project.",
+    stack:
+      'jQuery - Javascript - Bootstrap - CSS3 - HTML5 - SharePoint - SQL - Google Analytics - Adobe Suite - Agile',
+    disclaimer:
+      'Due to client confidentiality I can not share the source code for this project.',
+    image: require('../assets/images/ContentProject.png')
   }
 ];
 
