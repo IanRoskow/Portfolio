@@ -9,16 +9,20 @@ const StyledHero = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 780px) {
+    font-size: 2em;
+  }
 `;
 
 const Title = styled.div`
   position: absolute;
   text-align: center;
-  line-height: 1em;
+  line-height: 1.1em;
+`;
 
-  & > span {
-    color: #c49f6f;
-  }
+const Span = styled.span`
+  color: ${({ theme }) => theme.secondary1};
 `;
 
 const Canvas = styled.canvas`
@@ -237,7 +241,7 @@ class Hero extends React.Component {
       <StyledHero>
         <Title>
           <div>
-            Hello, I'm <span>Ian Roskow.</span>
+            Hello, I'm <Span>Ian Roskow</Span>.
           </div>
           <div>I'm a front-end web developer.</div>
           <Button
@@ -245,7 +249,7 @@ class Hero extends React.Component {
             Icon='angle down'
             onClick={() =>
               window.scroll({
-                top: window.innerHeight,
+                top: window.innerHeight + 20,
                 left: 0,
                 behavior: 'smooth'
               })
