@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
-import { Container, SectionHeader } from '../StyledComponents/GlobalsStyles';
+import { Container, SectionHeader } from './GlobalsStyledComponents';
 
 const Header = styled.h1`
   &&& {
@@ -62,15 +62,16 @@ const Stack = styled.div`
   }
 `;
 
+const StyledRow = styled.span`
+  color: ${props =>
+    props.primary ? props.theme.primary2 : props.theme.secondary1};
+  padding: 5px;
+  font-weight: bold;
+`;
+
 const StackRow = props => {
   const Row = styled.div`
     margin-bottom: 15px;
-  `;
-  const StyledRow = styled.span`
-    color: ${props =>
-      props.primary ? props.theme.primary2 : props.theme.secondary1};
-    padding: 5px;
-    font-weight: bold;
   `;
 
   let expertSkills = [],
@@ -103,7 +104,7 @@ const About = () => {
         <ProfilePhoto>
           <img
             style={{ width: '50%', borderRadius: '5%' }}
-            src={require('../../assets/images/ProfilePhoto.JPG')}
+            src={require('../assets/images/ProfilePhoto.JPG')}
             alt='There should be a nice here.'
           />
           <p style={{ padding: '10px' }}>
@@ -131,10 +132,14 @@ const About = () => {
           />
           <br />
           <br />
-          <StackRow
-            expert={['-Proficient-']}
-            knowledgable={['-Knowledgable-']}
-          />
+          <div>
+            <StyledRow primary>
+              <i>-Proficient-</i>
+            </StyledRow>
+            <StyledRow>
+              <i>-Knowledgable-</i>
+            </StyledRow>
+          </div>
         </Stack>
         <GridItem>
           <StyledIcon bordered inverted size='huge' name='stopwatch' />

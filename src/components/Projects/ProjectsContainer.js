@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectList from './ProjectList';
-import { Container, SectionHeader } from './StyledComponents/GlobalsStyles';
+import ProjectList from './Project';
+import { Container, SectionHeader } from '../GlobalsStyledComponents';
 
 const projectMap = [
   {
@@ -11,7 +11,7 @@ const projectMap = [
     stack: 'React - Styled Components - Gatsby',
     source: 'https://github.com/IanRoskow/Portfolio',
     demo: 'https://ianroskow.com',
-    image: require('../assets/images/Portfolio.png')
+    image: require('../../assets/images/Portfolio.png')
   },
   {
     key: '2',
@@ -21,7 +21,7 @@ const projectMap = [
     stack: 'React - React Hooks - Styled Components - Axios',
     source: 'https://github.com/IanRoskow/netflix-search',
     demo: 'https://netflixsearch.netlify.com',
-    image: require('../assets/images/Netflix.png')
+    image: require('../../assets/images/Netflix.png')
   },
   {
     key: '3',
@@ -31,7 +31,7 @@ const projectMap = [
     stack: 'jQuery - Javascript - CSS3 - HTML5 - SharePoint - Agile',
     disclaimer:
       'Due to client confidentiality I can not share the source code for this project.',
-    image: require('../assets/images/QualityProject.png')
+    image: require('../../assets/images/QualityProject.png')
   },
   {
     key: '4',
@@ -42,7 +42,7 @@ const projectMap = [
       'jQuery - Javascript - Bootstrap - CSS3 - HTML5 - SharePoint - SQL - Google Analytics - Adobe Suite - Agile',
     disclaimer:
       'Due to client confidentiality I can not share the source code for this project.',
-    image: require('../assets/images/ContentProject.png')
+    image: require('../../assets/images/ContentProject.png')
   }
 ];
 

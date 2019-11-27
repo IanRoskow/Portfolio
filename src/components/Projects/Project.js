@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SecondaryHeader } from './StyledComponents/GlobalsStyles';
-import Button from './Button';
+import { SecondaryHeader } from '../GlobalsStyledComponents';
+import Button from '../Button';
 
 const StyledProject = styled.div`
   padding: 20px 0px 100px;
@@ -67,7 +67,7 @@ const ProjectList = props => {
           primary
           onClick={() => window.open(`${props.project.demo}`)}
           Text='Visit'
-          Icon='linkify'
+          Icon='paper plane outline'
         />
         <Button
           onClick={() => window.open(`${props.project.source}`)}

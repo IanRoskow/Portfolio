@@ -3,7 +3,7 @@ import {
   Container,
   SectionHeader,
   SecondaryHeader
-} from './StyledComponents/GlobalsStyles';
+} from './GlobalsStyledComponents';
 import { Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 
@@ -13,12 +13,19 @@ const Icons = styled.div`
   margin: 50px 0;
 `;
 
+const Link = styled.a`
+  color: ${({ theme }) => theme.secondary1};
+  &:hover {
+    color: ${({ theme }) => theme.secondary1Highlight};
+  }
+`;
+
 const Contact = () => {
   return (
     <Container>
       <SectionHeader>Contact Me</SectionHeader>
       <SecondaryHeader>
-        <a href='mailto:hello@fidalgo.dev'>ianroskow@gmail.com</a>
+        <Link href='mailto:ianroskow@gmail.com'>ianroskow@gmail.com</Link>
       </SecondaryHeader>
       <Icons>
         <Button

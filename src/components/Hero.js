@@ -1,6 +1,31 @@
 import React from 'react';
-import './Hero.css';
-import Button from '../Button';
+import Button from './Button';
+import styled from 'styled-components';
+
+const StyledHero = styled.div`
+  position: relative;
+  color: white;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Title = styled.div`
+  position: absolute;
+  text-align: center;
+  line-height: 1em;
+
+  & > span {
+    color: #c49f6f;
+  }
+`;
+
+const Canvas = styled.canvas`
+  background-color: #2c343f;
+  width: 100%;
+  height: 100%;
+`;
 
 class Hero extends React.Component {
   componentDidMount() {
@@ -209,8 +234,8 @@ class Hero extends React.Component {
   }
   render() {
     return (
-      <div className='hero'>
-        <div className='title'>
+      <StyledHero>
+        <Title>
           <div>
             Hello, I'm <span>Ian Roskow.</span>
           </div>
@@ -226,9 +251,9 @@ class Hero extends React.Component {
               })
             }
           />
-        </div>
-        <canvas ref='canvas' id='canvas'></canvas>
-      </div>
+        </Title>
+        <Canvas ref='canvas'></Canvas>
+      </StyledHero>
     );
   }
 }
