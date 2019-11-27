@@ -7,8 +7,8 @@ const projectMap = [
     key: '1',
     title: 'My Portfolio Site',
     summary:
-      'The site you are currently on, my portfolio site to show case my work and side projects. I built this using React and Styled Components. I am hosting it using Gatsby to ensure I have solid SEO. I hope you enjoy it.',
-    stack: 'React - Styled Components - Gatsby',
+      'The site you are currently on, my portfolio site to show case my work and side projects. I built this using React and Styled Components. I am hosting it using Netlify with Git Hub to allow for continuous integration and prerendering for improved SEO. I hope you enjoy it.',
+    stack: 'React - Styled Components - Semantic UI',
     source: 'https://github.com/IanRoskow/Portfolio',
     demo: 'https://ianroskow.com',
     image: require('../../assets/images/Portfolio.png')
