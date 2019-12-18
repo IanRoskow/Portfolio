@@ -104,7 +104,7 @@ const About = () => {
         <ProfilePhoto>
           <img
             style={{ width: '50%', borderRadius: '5%' }}
-            src={require('../assets/images/ProfilePhoto.JPG')}
+            src={require('../assets/images/ProfilePhoto.jpeg')}
             alt='There should be a nice here.'
           />
           <p style={{ padding: '10px' }}>
