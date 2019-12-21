@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Icon, Visibility } from 'semantic-ui-react';
-import { Container, SectionHeader } from './GlobalsStyledComponents';
+import { Container, AnimatedHeader } from './GlobalsStyledComponents';
 
 const Header = styled.h1`
   &&& {
@@ -9,13 +9,6 @@ const Header = styled.h1`
     color: ${({ theme }) => theme.primary1};
     margin: 0px 0px 20px;
   }
-`;
-
-const AnimatedHeader = styled(SectionHeader)`
-  transition: transform 1300ms ease 200ms, opacity 1000ms ease 200ms;
-  transform: ${props =>
-    props.topVisible ? 'translate(0, 0)' : 'translate(-300px, 0)'};
-  opacity: ${props => (props.topVisible ? '1' : '0')};
 `;
 
 const IconTitle = styled.h1`
@@ -90,6 +83,7 @@ const Stack = styled.div`
   transform: ${props =>
     props.topVisible ? 'translate(0, 0)' : 'translate(500px, 0)'};
   opacity: ${props => (props.topVisible ? '1' : '0')};
+
   @media (max-width: 768px) {
     grid-column: 1/-1;
   }
@@ -111,7 +105,7 @@ const StackRow = props => {
     knowledgableSkills = [];
 
   if (props.expert)
-    expertSkills = props.expert.map(el => (
+    expertSkills = props.expert.map((el, i) => (
       <StyledRow key={el} primary>
         {el}
       </StyledRow>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectList from './Project';
-import { Container, SectionHeader } from '../GlobalsStyledComponents';
+import { Container, AnimatedHeader } from '../GlobalsStyledComponents';
+import { Visibility } from 'semantic-ui-react';
 
 const projectMap = [
   {
@@ -47,14 +48,22 @@ const projectMap = [
 ];
 
 const Projects = () => {
+  const [headerVisible, setHeaderVisible] = useState(false);
   const projects = projectMap.map(project => (
     <ProjectList key={project.key} project={project} />
   ));
   return (
-    <Container>
-      <SectionHeader>My Projects</SectionHeader>
-      {projects}
-    </Container>
+    <Visibility
+      onTopPassed={(e, { calculations }) => {
+        setHeaderVisible(calculations.topPassed);
+      }}
+      offset={[250, 250]}
+    >
+      <Container>
+        <AnimatedHeader topVisible={headerVisible}>My Projects</AnimatedHeader>
+        {projects}
+      </Container>
+    </Visibility>
   );
 };
 

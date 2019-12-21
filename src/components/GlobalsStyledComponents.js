@@ -19,6 +19,13 @@ export const SectionHeader = styled.h1`
   }
 `;
 
+export const AnimatedHeader = styled(SectionHeader)`
+  transition: transform 1300ms ease 200ms, opacity 1000ms ease 200ms;
+  transform: ${props =>
+    props.topVisible ? 'translate(0, 0)' : 'translate(-300px, 0)'};
+  opacity: ${props => (props.topVisible ? '1' : '0')};
+`;
+
 export const SecondaryHeader = styled.h2`
   color: ${({ theme }) => theme.secondary1};
   text-align: center;

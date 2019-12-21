@@ -1,10 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { SecondaryHeader } from '../GlobalsStyledComponents';
 import Button from '../Button';
+import { Visibility } from 'semantic-ui-react';
 
 const StyledProject = styled.div`
   padding: 20px 0px 100px;
+
+  & > h2 {
+    transition: transform 1300ms ease, opacity 1000ms ease;
+    transform: ${props =>
+      props.topVisible ? 'translate(0, 0)' : 'translate(-300px, 0)'};
+    opacity: ${props => (props.topVisible ? '1' : '0')};
+  }
+  & > div > div:first-child {
+    transition: transform 500ms ease 500ms, opacity 500ms ease 500ms;
+    transform: ${props =>
+      props.topVisible
+        ? 'translate(0, 0)'
+        : props.position
+        ? 'translate(300px, 0)'
+        : 'translate(-300px, 0)'};
+    opacity: ${props => (props.topVisible ? '1' : '0')};
+  }
+  & > div > div:last-child {
+    transition: transform 500ms ease 500ms, opacity 500ms ease 500ms;
+    transform: ${props =>
+      props.topVisible
+        ? 'translate(0, 0)'
+        : props.position
+        ? 'translate(-300px, 0)'
+        : 'translate(300px, 0)'};
+    opacity: ${props => (props.topVisible ? '1' : '0')};
+  }
+`;
+
+const ProjectFlex = styled.div`
+  display: flex;
+  flex-direction: ${props => props.flexDirection};
+  align-items: center;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 
 const ProjectImage = styled.div`
@@ -48,16 +86,9 @@ const Disclaimer = styled.p`
 `;
 
 const ProjectList = props => {
-  let flexDirection = props.project.key % 2 ? 'row-reverse' : 'row';
-  const ProjectFlex = styled.div`
-    display: flex;
-    flex-direction: ${flexDirection};
-    align-items: center;
+  const [topVisible, setTopVisible] = useState(false);
 
-    @media (max-width: 780px) {
-      flex-direction: column;
-    }
-  `;
+  let flexDirection = props.project.key % 2 ? 'row-reverse' : 'row';
 
   let bottomSection = null;
   if (props.project.demo || props.project.demo) {
@@ -81,19 +112,26 @@ const ProjectList = props => {
   }
 
   return (
-    <StyledProject>
-      <SecondaryHeader>{props.project.title}</SecondaryHeader>
-      <ProjectFlex>
-        <ProjectImage>
-          <img src={props.project.image} alt={props.project.title} />
-        </ProjectImage>
-        <ProjectDetails>
-          <p>{props.project.summary}</p>
-          <Stack>{props.project.stack}</Stack>
-          {bottomSection}
-        </ProjectDetails>
-      </ProjectFlex>
-    </StyledProject>
+    <Visibility
+      onTopPassed={(e, { calculations }) => {
+        setTopVisible(calculations.topPassed);
+      }}
+      offset={[250, 250]}
+    >
+      <StyledProject topVisible={topVisible} position={props.project.key % 2}>
+        <SecondaryHeader>{props.project.title}</SecondaryHeader>
+        <ProjectFlex flexDirection={flexDirection}>
+          <ProjectImage className='image'>
+            <img src={props.project.image} alt={props.project.title} />
+          </ProjectImage>
+          <ProjectDetails className='details'>
+            <p>{props.project.summary}</p>
+            <Stack>{props.project.stack}</Stack>
+            {bottomSection}
+          </ProjectDetails>
+        </ProjectFlex>
+      </StyledProject>
+    </Visibility>
   );
 };
 
