@@ -116,7 +116,7 @@ const ProjectList = props => {
       onTopPassed={(e, { calculations }) => {
         setTopVisible(calculations.topPassed);
       }}
-      offset={[250, 250]}
+      offset={[600, 600]}
     >
       <StyledProject topVisible={topVisible} position={props.project.key % 2}>
         <SecondaryHeader>{props.project.title}</SecondaryHeader>

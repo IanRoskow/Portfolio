@@ -54,10 +54,9 @@ const Projects = () => {
   ));
   return (
     <Visibility
-      onTopPassed={(e, { calculations }) => {
-        setHeaderVisible(calculations.topPassed);
+      onTopVisible={(e, { calculations }) => {
+        setHeaderVisible(calculations.topVisible);
       }}
-      offset={[250, 250]}
     >
       <Container>
         <AnimatedHeader topVisible={headerVisible}>My Projects</AnimatedHeader>

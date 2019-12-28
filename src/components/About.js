@@ -147,7 +147,7 @@ const About = () => {
           <ProfilePhoto topVisible={picVisible}>
             <img
               style={{ width: '50%', borderRadius: '5%' }}
-              src={require('../assets/images/ProfilePhoto.jpeg')}
+              src={require('../assets/images/ProfilePhoto.JPG')}
               alt='There should be a nice here.'
             />
             <p style={{ padding: '10px' }}>
