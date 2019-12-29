@@ -24,6 +24,11 @@ export const AnimatedHeader = styled(SectionHeader)`
   transform: ${props =>
     props.topVisible ? 'translate(0, 0)' : 'translate(-300px, 0)'};
   opacity: ${props => (props.topVisible ? '1' : '0')};
+
+  @media (max-width: 768px) {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 `;
 
 export const SecondaryHeader = styled.h2`

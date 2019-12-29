@@ -33,6 +33,21 @@ const StyledProject = styled.div`
         : 'translate(300px, 0)'};
     opacity: ${props => (props.topVisible ? '1' : '0')};
   }
+
+  @media (max-width: 768px) {
+    & > h2 {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    & > div > div:first-child {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    & > div > div:last-child {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
 `;
 
 const ProjectFlex = styled.div`

@@ -43,6 +43,13 @@ const GridItem = styled.div`
 
   @media (min-width: 769px) {
     grid-row: 1/2;
+    & > h1 {
+      opacity: 1;
+    }
+
+    & > p {
+      opacity: 1;
+    }
   }
 `;
 
@@ -51,6 +58,11 @@ const Wrapper = styled.div`
     opacity 500ms ease ${props => props.delay};
   transform: ${props => (props.topVisible ? 'rotate(0)' : 'rotate(-45deg)')};
   opacity: ${props => (props.topVisible ? '1' : '0')};
+
+  @media (max-width: 768px) {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 `;
 
 const StyledIcon = styled(Icon)`
@@ -73,6 +85,8 @@ const ProfilePhoto = styled.div`
 
   @media (max-width: 768px) {
     grid-column: 1/-1;
+    transform: translate(0, 0);
+    opacity: 1;
   }
 `;
 
@@ -86,6 +100,8 @@ const Stack = styled.div`
 
   @media (max-width: 768px) {
     grid-column: 1/-1;
+    transform: translate(0, 0);
+    opacity: 1;
   }
 `;
 
