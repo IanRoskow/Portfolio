@@ -15,7 +15,7 @@ export const SectionHeader = styled.h1`
     text-align: center;
     color: ${({ theme }) => theme.primary2};
     margin: 0px 0px 60px;
-    font-size: 2.5em;
+    font-size: 2em;
   }
 `;
 

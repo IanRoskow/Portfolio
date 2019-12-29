@@ -7,10 +7,48 @@ import {
 import { Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 
+const FooterHeader = styled(SectionHeader)`
+  &&& {
+    margin-bottom: 0;
+  }
+`;
+
+const SubTitle = styled(SecondaryHeader)`
+  &&& {
+    margin-top: 0;
+  }
+`;
+
+const Email = styled(SecondaryHeader)`
+  &&& {
+    margin-top: 75px;
+    margin-bottom: 25px;
+  }
+`;
+
 const Icons = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin: 50px 0;
+  max-width: 500px;
+  margin: auto;
+`;
+
+const StyledButton = styled(Button)`
+  &&& {
+    color: ${props => props.theme.defaultText};
+    background-color: ${props => props.theme.defaultBackground};
+    border: 2px solid;
+    border-color: ${props => props.theme.primary1};
+    border-radius: 5px;
+
+    &:hover {
+      background-color: ${props => props.theme.primary1};
+      color: ${props => props.theme.defaultBackground};
+    }
+    & > *:hover {
+      background-color: inherit;
+    }
+  }
 `;
 
 const Link = styled.a`
@@ -23,12 +61,13 @@ const Link = styled.a`
 const Contact = () => {
   return (
     <Container>
-      <SectionHeader>Contact Me</SectionHeader>
-      <SecondaryHeader>
+      <FooterHeader>Contact Me</FooterHeader>
+      <SubTitle>If you want to talk, reach me at:</SubTitle>
+      <Email>
         <Link href='mailto:ianroskow@gmail.com'>ianroskow@gmail.com</Link>
-      </SecondaryHeader>
+      </Email>
       <Icons>
-        <Button
+        <StyledButton
           circular
           color='linkedin'
           icon='linkedin'
@@ -39,13 +78,13 @@ const Contact = () => {
             )
           }
         />
-        <Button
+        <StyledButton
           circular
           color='black'
           icon='github'
           onClick={() => window.open('https://github.com/IanRoskow', 'blank')}
         />
-        <Button
+        <StyledButton
           circular
           color='orange'
           icon='stack overflow'
@@ -56,7 +95,7 @@ const Contact = () => {
             )
           }
         />
-        <Button
+        <StyledButton
           circular
           color='instagram'
           icon='instagram'
@@ -64,7 +103,7 @@ const Contact = () => {
             window.open('https://www.instagram.com/ianroskow/', 'blank')
           }
         />
-        <Button
+        <StyledButton
           circular
           color='grey'
           icon='file alternate outline'
