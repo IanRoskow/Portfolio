@@ -1,3 +1,4 @@
+/* eslint-disable */
 var CACHE_NAME = 'roskow-portfolio';
 var urlsToCache = ['/'];
 
@@ -27,7 +28,7 @@ self.addEventListener('fetch', event => {
 
 // Update a service worker
 self.addEventListener('activate', event => {
-  var cacheWhitelist = ['pwa-task-manager'];
+  var cacheWhitelist = ['roskow-portfolio'];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
