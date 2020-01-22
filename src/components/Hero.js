@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from './Button';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 const StyledHero = styled.div`
   position: relative;
@@ -26,33 +26,43 @@ const Span = styled.span`
 `;
 
 const Canvas = styled.canvas`
-  background-color: #2c343f;
+  background-color: ${({ theme }) => theme.canvasBackground};
   width: 100%;
   height: 100%;
+  transition: all 0.35s linear;
 `;
 
-class Hero extends React.Component {
-  componentDidMount() {
-    var c = this.refs.canvas;
-    var ctx = c.getContext('2d');
+const Hero = props => {
+  let name = props.theme.name;
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    var ctx = canvas.getContext('2d');
     var light = {
-      x: c.width / 2,
-      y: c.height / 2
+      x: canvas.width / 2,
+      y: canvas.height / 2
     };
     var sun = false;
     let key = -1;
     let xmouse, ymouse, dx, dy, xdiff, ydiff;
 
     function resize() {
-      c.width = window.innerWidth;
-      c.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       light = {
-        x: c.width / 2,
-        y: c.height / 2
+        x: canvas.width / 2,
+        y: canvas.height / 2
       };
     }
-
-    var colors = ['#7395ae', '#557a95', '#c49f6f'];
+    const canvasColor = props.theme.canvasBackground;
+    const canvasLight = props.theme.canvasLight;
+    const colors = [
+      props.theme.primary1,
+      props.theme.primary2,
+      props.theme.secondary1
+    ];
+    // const colors = ['#7395ae', '#557a95', '#9b6e00'];
 
     function drawLight() {
       ctx.beginPath();
@@ -65,8 +75,8 @@ class Hero extends React.Component {
         light.y,
         1000
       );
-      gradient.addColorStop(0, '#3b4654');
-      gradient.addColorStop(1, '#2c343f');
+      gradient.addColorStop(0, canvasLight);
+      gradient.addColorStop(1, canvasColor);
       ctx.fillStyle = gradient;
       ctx.fill();
 
@@ -83,7 +93,7 @@ class Hero extends React.Component {
         );
         gradient.addColorStop(0, '#fff');
         gradient.addColorStop(0.3, '#fff');
-        gradient.addColorStop(1, '#3b4654');
+        gradient.addColorStop(1, canvasLight);
         ctx.fillStyle = gradient;
         ctx.fill();
       }
@@ -91,8 +101,8 @@ class Hero extends React.Component {
 
     function Box() {
       this.half_size = Math.floor(Math.random() * 15 + 1);
-      this.x = Math.floor(Math.random() * c.width + 1);
-      this.y = Math.floor(Math.random() * c.height + 1);
+      this.x = Math.floor(Math.random() * canvas.width + 1);
+      this.y = Math.floor(Math.random() * canvas.height + 1);
       this.r = Math.random() * Math.PI;
       this.shadow_length = 2000;
       this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -140,11 +150,11 @@ class Hero extends React.Component {
         ctx.fillStyle = this.color;
         ctx.fill();
 
-        if (this.y - this.half_size > c.height) {
-          this.y -= c.height + 100;
+        if (this.y - this.half_size > canvas.height) {
+          this.y -= canvas.height + 100;
         }
-        if (this.x - this.half_size > c.width) {
-          this.x -= c.width + 100;
+        if (this.x - this.half_size > canvas.width) {
+          this.x -= canvas.width + 100;
         }
       };
       this.drawShadow = function() {
@@ -175,7 +185,7 @@ class Hero extends React.Component {
           ctx.lineTo(points[n].startX, points[n].startY);
           ctx.lineTo(points[n].endX, points[n].endY);
           ctx.lineTo(points[i].endX, points[i].endY);
-          ctx.fillStyle = '#2c343f';
+          ctx.fillStyle = canvasColor;
           ctx.fill();
         }
       };
@@ -184,7 +194,7 @@ class Hero extends React.Component {
     var boxes = [];
 
     function draw() {
-      ctx.clearRect(0, 0, c.width, c.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawLight();
 
       for (let i = 0; i < boxes.length; i++) {
@@ -205,7 +215,7 @@ class Hero extends React.Component {
     }
 
     window.onresize = resize;
-    c.onmousemove = function(e) {
+    canvas.onmousemove = function(e) {
       xmouse = e.offsetX === undefined ? e.layerX : e.offsetX;
       ymouse = e.offsetY === undefined ? e.layerY : e.offsetY;
       if (!sun) {
@@ -235,31 +245,30 @@ class Hero extends React.Component {
         }
       }
     }
-  }
-  render() {
-    return (
-      <StyledHero>
-        <Title>
-          <div>
-            Hello, I'm <Span>Ian Roskow</Span>.
-          </div>
-          <div>I'm a front-end web developer.</div>
-          <Button
-            Text='View my work'
-            Icon='angle down'
-            onClick={() =>
-              window.scroll({
-                top: window.innerHeight + 20,
-                left: 0,
-                behavior: 'smooth'
-              })
-            }
-          />
-        </Title>
-        <Canvas ref='canvas'></Canvas>
-      </StyledHero>
-    );
-  }
-}
+  }, [name]);
 
-export default Hero;
+  return (
+    <StyledHero>
+      <Title>
+        <div>
+          Hello, I'm <Span>Ian Roskow</Span>.
+        </div>
+        <div>I'm a front-end web developer.</div>
+        <Button
+          Text='View my work'
+          Icon='angle down'
+          onClick={() =>
+            window.scroll({
+              top: window.innerHeight + 20,
+              left: 0,
+              behavior: 'smooth'
+            })
+          }
+        />
+      </Title>
+      <Canvas ref={canvasRef}></Canvas>
+    </StyledHero>
+  );
+};
+
+export default withTheme(Hero);

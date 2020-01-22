@@ -3,7 +3,7 @@ import DesktopHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
 import { scrollPage } from '../../utils/utils';
 
-const Header = () => {
+const Header = props => {
   const [active, setActive] = useState(false);
   const [isDesktop, setDesktop] = useState(window.innerWidth > 780);
   const [inCanvas, setLocation] = useState(window.scrollY < window.innerHeight);

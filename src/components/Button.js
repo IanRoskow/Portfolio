@@ -6,7 +6,8 @@ const Button = props => {
   const StyledButton = styled(SemanticButton)`
     &&& {
       background-color: ${({ theme }) =>
-        props.primary ? theme.primary1Highlight : null};
+        props.primary ? theme.primary2 : null};
+      color: ${({ theme }) => (props.primary ? theme.canvasText : null)};
 
       &:hover {
         background-color: ${({ theme }) =>

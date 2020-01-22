@@ -68,6 +68,7 @@ const Contact = () => {
       </Email>
       <Icons>
         <StyledButton
+          aria-label='linked in profile'
           circular
           color='linkedin'
           icon='linkedin'
@@ -79,12 +80,14 @@ const Contact = () => {
           }
         />
         <StyledButton
+          aria-label='git hub profile'
           circular
           color='black'
           icon='github'
           onClick={() => window.open('https://github.com/IanRoskow', 'blank')}
         />
         <StyledButton
+          aria-label='stack overflow profile'
           circular
           color='orange'
           icon='stack overflow'
@@ -96,14 +99,16 @@ const Contact = () => {
           }
         />
         <StyledButton
+          aria-label='instagram profile'
           circular
           color='instagram'
           icon='instagram'
           onClick={() =>
-            window.open('https://www.instagram.com/ianroskow/', 'blank')
+            window.open('https://www.instagram.com/roskowcodes/', 'blank')
           }
         />
         <StyledButton
+          aria-label='online resume'
           circular
           color='grey'
           icon='file alternate outline'

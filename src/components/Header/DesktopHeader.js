@@ -5,12 +5,12 @@ const Menu = styled.div`
   position: fixed;
   z-index: 10;
   width: 100%;
-  background-color: ${({ theme }) => theme.canvasBackground};
+  background-color: ${({ theme }) => theme.canvasLight};
   color: ${({ theme }) => theme.canvasText};
   height: 50px;
   padding-left: 10%;
   transition: opacity 200ms;
-  opacity: 1;
+  opacity: 0.9;
   &.hidden {
     opacity: 0;
   }
@@ -21,7 +21,7 @@ const Item = styled.div`
   font-size: 1.2em;
   padding: 15px 20px;
   font-weight: bold;
-  color: ${({ theme }) => theme.secondary1};
+  color: ${({ theme }) => theme.canvasText};
   transition: color 500ms;
   cursor: pointer;
   &:hover {

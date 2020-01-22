@@ -67,7 +67,7 @@ const ProjectImage = styled.div`
 
   & > img {
     max-width: 100%;
-    box-shadow: 0 3px 6px 2px grey;
+    box-shadow: 0 3px 6px 2px ${({ theme }) => theme.boxShadow};
   }
 `;
 
@@ -97,7 +97,7 @@ const Stack = styled.p`
 `;
 
 const Disclaimer = styled.p`
-  color: ${({ theme }) => theme.primary1};
+  color: ${({ theme }) => theme.primary2};
 `;
 
 const ProjectList = props => {
