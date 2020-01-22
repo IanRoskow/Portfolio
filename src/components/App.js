@@ -26,6 +26,12 @@ const StyledButton = styled.button`
   border: none;
   cursor: pointer;
 
+  @media (max-width: 780px) {
+    right: 20px;
+    top: 12px;
+    padding: 0;
+  }
+
   &:focus {
     outline: none;
   }

@@ -47,7 +47,7 @@ const MobileMenu = styled.div`
   color: ${({ theme }) => theme.canvasText};
   height: auto;
   right: 15px;
-  top: 45px;
+  top: 55px;
   border-radius: 5px;
   text-align: center;
   transition: opacity 200ms;

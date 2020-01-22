@@ -257,6 +257,7 @@ const Hero = props => {
         <Button
           Text='View my work'
           Icon='angle down'
+          style={{ 'background-color': '#e0e1e2' }}
           onClick={() =>
             window.scroll({
               top: window.innerHeight + 20,
