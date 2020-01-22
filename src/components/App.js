@@ -26,6 +26,10 @@ const StyledButton = styled.button`
   border: none;
   cursor: pointer;
 
+  &:focus {
+    outline: none;
+  }
+
   & > .sun {
     display: ${props => (props.sun ? 'block' : 'none')};
     background-color: dodgerblue;
