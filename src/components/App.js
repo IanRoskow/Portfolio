@@ -73,7 +73,7 @@ const App = () => {
 
     useEffect(() => {
         checkMode();
-    }, [checkMode]);
+    }, []);
 
     const toggle = () => {
         if (localStorage.getItem('mode') === 'light') {
