@@ -61,17 +61,16 @@ const App = () => {
         localStorage.setItem('mode', 'dark');
     };
 
-    const checkMode = () => {
-        if (localStorage.getItem('mode') === 'light') {
-            setLight();
-        } else if (localStorage.getItem('mode') === 'dark') {
-            setDark();
-        } else {
-            setLight();
-        }
-    };
-
     useEffect(() => {
+        const checkMode = () => {
+            if (localStorage.getItem('mode') === 'light') {
+                setLight();
+            } else if (localStorage.getItem('mode') === 'dark') {
+                setDark();
+            } else {
+                setLight();
+            }
+        };
         checkMode();
     }, []);
 
