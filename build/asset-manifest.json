@@ -1,24 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.f6f05234.chunk.css",
-    "main.js": "/static/js/main.a5b0d04c.chunk.js",
-    "main.js.map": "/static/js/main.a5b0d04c.chunk.js.map",
+    "main.js": "/static/js/main.8d1c34e7.chunk.js",
+    "main.js.map": "/static/js/main.8d1c34e7.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.daaf4d4d.js",
     "runtime~main.js.map": "/static/js/runtime~main.daaf4d4d.js.map",
-    "static/js/2.5aa7908d.chunk.js": "/static/js/2.5aa7908d.chunk.js",
-    "static/js/2.5aa7908d.chunk.js.map": "/static/js/2.5aa7908d.chunk.js.map",
+    "static/js/2.e9a804eb.chunk.js": "/static/js/2.e9a804eb.chunk.js",
+    "static/js/2.e9a804eb.chunk.js.map": "/static/js/2.e9a804eb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.476a1f3e079a0ad355482d935929e924.js": "/precache-manifest.476a1f3e079a0ad355482d935929e924.js",
+    "precache-manifest.7d89a15bb9ba1895f6f1e9d9ff0d41ce.js": "/precache-manifest.7d89a15bb9ba1895f6f1e9d9ff0d41ce.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.f6f05234.chunk.css.map": "/static/css/main.f6f05234.chunk.css.map",
-    "static/media/IanRoskowResume.pdf": "/static/media/IanRoskowResume.23245b9b.pdf",
-    "static/media/Pics.png": "/static/media/Pics.5ccd978f.png",
-    "static/media/Pics.mp4": "/static/media/Pics.ae33274d.mp4",
-    "static/media/Portfolio.png": "/static/media/Portfolio.080747bb.png",
-    "static/media/Portfolio.mp4": "/static/media/Portfolio.c5c7193e.mp4",
-    "static/media/Todo.png": "/static/media/Todo.7cb49e97.png",
-    "static/media/Todo.mp4": "/static/media/Todo.8ea2a5b8.mp4",
-    "static/media/rgbGame.mp4": "/static/media/rgbGame.567fdbaa.mp4",
-    "static/media/rgbGame.png": "/static/media/rgbGame.feaae87d.png"
+    "static/media/ContentProject.png": "/static/media/ContentProject.0a6c314e.png",
+    "static/media/DevConnector.png": "/static/media/DevConnector.6d8c37b2.png",
+    "static/media/IanRoskowResume.pdf": "/static/media/IanRoskowResume.79b9354f.pdf",
+    "static/media/Netflix.png": "/static/media/Netflix.94301d40.png",
+    "static/media/Portfolio.png": "/static/media/Portfolio.161d8ee7.png",
+    "static/media/ProfilePhoto.JPG": "/static/media/ProfilePhoto.de313a76.JPG",
+    "static/media/QualityProject.png": "/static/media/QualityProject.43501aa0.png"
   }
 }
