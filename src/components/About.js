@@ -144,9 +144,9 @@ const About = () => {
     const [topVisible, setTopVisible] = useState(false);
     const [picVisible, setPicVisible] = useState(false);
 
-    const handleUpdate = (e, { calculations }) => {
-        setTopVisible(calculations.onScreen);
-    };
+    // const handleUpdate = (e, { calculations }) => {
+    //     setTopVisible(calculations.onScreen);
+    // };
 
     return (
         <Visibility
